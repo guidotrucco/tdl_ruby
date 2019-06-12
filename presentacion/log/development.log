@@ -1,0 +1,317 @@
+Started GET "/" for 127.0.0.1 at 2019-05-20 19:34:19 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 11ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to CreateProfessors (20190520230217)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to CreateProfessors (20190520230320)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190520230320_create_professors.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "professors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "file_number" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190520230320_create_professors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190520230320"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-20 23:03:24.541304"], ["updated_at", "2019-05-20 23:03:24.541304"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Started GET "/professors" for 127.0.0.1 at 2019-05-20 20:03:45 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/professors/index.html.erb:15
+  Rendered professors/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 1611ms (Views: 1602.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/professors/new" for 127.0.0.1 at 2019-05-20 20:03:49 -0300
+Processing by ProfessorsController#new as HTML
+  Rendering professors/new.html.erb within layouts/application
+  Rendered professors/_form.html.erb (17.9ms)
+  Rendered professors/new.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 49ms (Views: 30.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/professors" for 127.0.0.1 at 2019-05-20 20:04:00 -0300
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zemVYWhTZXRP13Q6JVwdHR/gKyfKjQEuNfykJnwl7fmPM0deXFfFK5hJha8z/UTLNoqaY+wYmgtP159rvY3nmQ==", "professor"=>{"name"=>"Leandro ", "file_number"=>""}, "commit"=>"Create Professor"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/professors_controller.rb:30
+  [1m[36mProfessor Create (0.7ms)[0m  [1m[32mINSERT INTO "professors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Leandro "], ["created_at", "2019-05-20 23:04:00.017415"], ["updated_at", "2019-05-20 23:04:00.017415"]]
+  ↳ app/controllers/professors_controller.rb:30
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/professors_controller.rb:30
+Redirected to http://localhost:3000/professors/1
+Completed 302 Found in 15ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/professors/1" for 127.0.0.1 at 2019-05-20 20:04:00 -0300
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:67
+  Rendering professors/show.html.erb within layouts/application
+  Rendered professors/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 17ms (Views: 12.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/professors" for 127.0.0.1 at 2019-05-20 20:04:04 -0300
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.1ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/professors/index.html.erb:15
+  Rendered professors/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/professors/1" for 127.0.0.1 at 2019-05-20 20:04:07 -0300
+Processing by ProfessorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0+omsuqrEJDqtjuytLplmAaNYGs95VzWQLDBDIUhrD0i7yW4xzMmMWwTPlCEn/jkVBIotyYWiPm6ylyKJ0bt6w==", "id"=>"1"}
+  [1m[36mProfessor Load (0.1ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/professors_controller.rb:57
+  [1m[36mProfessor Destroy (0.2ms)[0m  [1m[31mDELETE FROM "professors" WHERE "professors"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/professors_controller.rb:57
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/professors_controller.rb:57
+Redirected to http://localhost:3000/professors
+Completed 302 Found in 11ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/professors" for 127.0.0.1 at 2019-05-20 20:04:07 -0300
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.1ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/professors/index.html.erb:15
+  Rendered professors/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/professors/new" for 127.0.0.1 at 2019-05-20 20:04:09 -0300
+Processing by ProfessorsController#new as HTML
+  Rendering professors/new.html.erb within layouts/application
+  Rendered professors/_form.html.erb (2.8ms)
+  Rendered professors/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 22ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/professors" for 127.0.0.1 at 2019-05-20 20:04:24 -0300
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+b0Bg43/mVBuXZ/2ej03JUQkFIID+FLom6y+WPyUkty7Z9O8ufs5D7nDbmNsnG7zbU6lxiVtyc3hh4UVPTyYvA==", "professor"=>{"name"=>"Luis Argerich", "file_number"=>"50123"}, "commit"=>"Create Professor"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/professors_controller.rb:30
+  [1m[36mProfessor Create (0.3ms)[0m  [1m[32mINSERT INTO "professors" ("name", "file_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Luis Argerich"], ["file_number", 50123], ["created_at", "2019-05-20 23:04:24.627249"], ["updated_at", "2019-05-20 23:04:24.627249"]]
+  ↳ app/controllers/professors_controller.rb:30
+  [1m[35m (13.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/professors_controller.rb:30
+Redirected to http://localhost:3000/professors/2
+Completed 302 Found in 18ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/professors/2" for 127.0.0.1 at 2019-05-20 20:04:24 -0300
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProfessor Load (0.1ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:67
+  Rendering professors/show.html.erb within layouts/application
+  Rendered professors/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.1ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to CreateSubjects (20190520230528)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190520230528_create_subjects.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "professor_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_bbcb717737"
+FOREIGN KEY ("professor_id")
+  REFERENCES "professors" ("id")
+)[0m
+  ↳ db/migrate/20190520230528_create_subjects.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_subjects_on_professor_id" ON "subjects" ("professor_id")[0m
+  ↳ db/migrate/20190520230528_create_subjects.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190520230528"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Started GET "/subjects" for 127.0.0.1 at 2019-05-20 20:05:53 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SubjectsController#index as HTML
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects"[0m
+  ↳ app/views/subjects/index.html.erb:15
+  Rendered subjects/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 194ms (Views: 176.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/subjects/new" for 127.0.0.1 at 2019-05-20 20:05:55 -0300
+Processing by SubjectsController#new as HTML
+  Rendering subjects/new.html.erb within layouts/application
+  Rendered subjects/_form.html.erb (6.5ms)
+  Rendered subjects/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 43ms (Views: 36.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/subjects" for 127.0.0.1 at 2019-05-20 20:06:03 -0300
+Processing by SubjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jKHcfe9vKRqBW/CeTPhjucWtaQxwTrfrhZbhfYJMzFOx/hFSXSPGeettomgQ0l0k79tl4psg9ng6khmugRjluQ==", "subject"=>{"name"=>"Organizacion de Datos", "professor_id"=>"2"}, "commit"=>"Create Subject"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/subjects_controller.rb:30
+  [1m[36mProfessor Load (0.1ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/subjects_controller.rb:30
+  [1m[36mSubject Create (0.3ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "professor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Organizacion de Datos"], ["professor_id", 2], ["created_at", "2019-05-20 23:06:03.235954"], ["updated_at", "2019-05-20 23:06:03.235954"]]
+  ↳ app/controllers/subjects_controller.rb:30
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/subjects_controller.rb:30
+Redirected to http://localhost:3000/subjects/1
+Completed 302 Found in 26ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/subjects/1" for 127.0.0.1 at 2019-05-20 20:06:03 -0300
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/subjects_controller.rb:67
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.1ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/subjects/show.html.erb:10
+  Rendered subjects/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 19ms (Views: 16.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/subjects/1" for 127.0.0.1 at 2019-05-20 20:10:40 -0300
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/subjects_controller.rb:67
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.1ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/subjects/show.html.erb:10
+  Rendered subjects/show.html.erb within layouts/application (15.8ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `string' for #<Professor:0x00007ffbc5017bd8>):
+     7: 
+     8: <p>
+     9:   <strong>Professor:</strong>
+    10:   <%= @subject.professor.string %>
+    11: </p>
+    12: 
+    13: <%= link_to 'Edit', edit_subject_path(@subject) %> |
+  
+app/views/subjects/show.html.erb:10:in `_app_views_subjects_show_html_erb__1089171165721437960_70359660057960'
+Started GET "/subjects/1" for 127.0.0.1 at 2019-05-20 20:10:53 -0300
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/subjects_controller.rb:67
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.1ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/subjects/show.html.erb:10
+  Rendered subjects/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/subjects" for 127.0.0.1 at 2019-05-20 20:11:11 -0300
+Processing by SubjectsController#index as HTML
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects"[0m
+  ↳ app/views/subjects/index.html.erb:15
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/subjects/index.html.erb:18
+  Rendered subjects/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/subjects/new" for 127.0.0.1 at 2019-05-20 20:12:42 -0300
+Processing by SubjectsController#new as HTML
+  Rendering subjects/new.html.erb within layouts/application
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT "professors".* FROM "professors" ORDER BY "professors"."name" ASC[0m
+  ↳ app/views/subjects/_form.html.erb:21
+  Rendered subjects/_form.html.erb (15.0ms)
+  Rendered subjects/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/subjects" for 127.0.0.1 at 2019-05-20 20:12:59 -0300
+Processing by SubjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gm6bFn30/0LEyqmh6oJhUjUl3UP8GaFsdFWoTuLbK62/MVY5z7gQIa78+1e2qF/PH1PRrRd34P/LUVCd4Y8CRw==", "subject"=>{"name"=>"Organizacion de Datos II", "professor_id"=>"2"}, "commit"=>"Create Subject"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/subjects_controller.rb:30
+  [1m[36mProfessor Load (0.1ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/subjects_controller.rb:30
+  [1m[36mSubject Create (0.3ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "professor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Organizacion de Datos II"], ["professor_id", 2], ["created_at", "2019-05-20 23:12:59.882460"], ["updated_at", "2019-05-20 23:12:59.882460"]]
+  ↳ app/controllers/subjects_controller.rb:30
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/subjects_controller.rb:30
+Redirected to http://localhost:3000/subjects/2
+Completed 302 Found in 18ms (ActiveRecord: 13.4ms)
+
+
+Started GET "/subjects/2" for 127.0.0.1 at 2019-05-20 20:12:59 -0300
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/subjects_controller.rb:67
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.1ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/subjects/show.html.erb:10
+  Rendered subjects/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/subjects" for 127.0.0.1 at 2019-05-20 20:13:04 -0300
+Processing by SubjectsController#index as HTML
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects"[0m
+  ↳ app/views/subjects/index.html.erb:15
+  [1m[36mProfessor Load (0.1ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/subjects/index.html.erb:18
+  [1m[36mCACHE Professor Load (0.0ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/subjects/index.html.erb:18
+  Rendered subjects/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.2ms)
+
+
