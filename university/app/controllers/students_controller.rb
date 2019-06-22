@@ -21,6 +21,10 @@ class StudentsController < ApplicationController
   def edit
   end
 
+  def enroll
+    @subjects = Subject.all
+  end
+
   # POST /students
   # POST /students.json
   def create
