@@ -15,5 +15,13 @@
   <%= @subject.professor.name %>
 </p>
 
+<p>
+  <strong>Students:</strong>
+  <% @subject.students.each do |student| %>
+  	<%= student.name %>
+  <% end %>
+</p>
+
+
 <%= link_to 'Edit', edit_subject_path(@subject) %> |
 <%= link_to 'Back', subjects_path %>
