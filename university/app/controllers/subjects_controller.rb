@@ -17,6 +17,10 @@ class SubjectsController < ApplicationController
     @subject = Subject.new
   end
 
+  def add_student
+    @subject.add_student(params[:student])
+  end
+
   # GET /subjects/1/edit
   def edit
   end
