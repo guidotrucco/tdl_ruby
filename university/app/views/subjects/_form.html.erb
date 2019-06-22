@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :professor_id %>
-    <%= form.text_field :professor_id %>
+    <%= form.collection_select :professor_id, Professor.order(:name),:id,:name, include_blank: true %>
   </div>
 
   <div class="actions">
