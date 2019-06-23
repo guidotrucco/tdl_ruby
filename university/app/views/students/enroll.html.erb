@@ -14,7 +14,7 @@
         <td><%= subject.name %></td>
         <td><%= subject.code %></td>
         <td><%= subject.professor.name %></td>
-        <td><%= link_to 'Enroll', subject %></td>
+        <td><%= link_to 'Enroll', add_student_path(subject, :student_id => @student.id), :method => :post %></td>
       </tr>
     <% end %>
   </tbody>

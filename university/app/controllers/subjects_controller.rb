@@ -1,5 +1,5 @@
 class SubjectsController < ApplicationController
-  before_action :set_subject, only: [:show, :edit, :update, :destroy]
+  before_action :set_subject, only: [:show, :edit, :update, :destroy, :add_student]
 
   # GET /subjects
   # GET /subjects.json
@@ -18,7 +18,12 @@ class SubjectsController < ApplicationController
   end
 
   def add_student
-    @subject.add_student(params[:student])
+    @subject.add_student(params[:student_id])
+    respond_to do |format|
+      if @subject.save
+        format.html { redirect_to @subject, notice: 'Student was successfully added.' } 
+      end
+    end
   end
 
   # GET /subjects/1/edit
