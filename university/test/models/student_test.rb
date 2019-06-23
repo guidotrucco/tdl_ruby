@@ -4,7 +4,7 @@ class StudentTest < ActiveSupport::TestCase
 
   test "student vacio no graba" do
     student = Student.new()
-    assert_not student.save
+    assert_not student.save()
   end
 
   test "student sin nombre no graba" do

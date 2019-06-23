@@ -3,6 +3,8 @@ require 'test_helper'
 class StudentsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @student = students(:one)
+    @student.padron = "12345"
+    @student.email = "mail@valido.com"
   end
 
   test "should get index" do

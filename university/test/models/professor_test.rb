@@ -4,7 +4,7 @@ class ProfessorTest < ActiveSupport::TestCase
 
   test "professor vacio no graba" do
     professor = Professor.new()
-    assert_not professor.save
+    assert_not professor.save()
   end
 
   test "professor sin nombre no graba" do

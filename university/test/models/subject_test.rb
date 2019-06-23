@@ -4,7 +4,7 @@ class SubjectTest < ActiveSupport::TestCase
 
   test "subject sin parametros no graba" do
     subject = Subject.new()
-    assert_not subject.save
+    assert_not subject.save()
   end
 
   test "subject sin nombre no graba" do

@@ -3,6 +3,7 @@ require 'test_helper'
 class ProfessorsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @professor = professors(:one)
+    @professor.file_number = "12345"
   end
 
   test "should get index" do
@@ -45,4 +46,6 @@ class ProfessorsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to professors_url
   end
+
+
 end
