@@ -6,8 +6,11 @@ class Subject < ApplicationRecord
   validates :code, :presence => true
   validates :professor, :presence => true
 
- def add_student(student)
-  	students << student.id
+ def add_student(student_id)
+ 	student_id = student_id.to_i
+  	student = Student.find(student_id)
+  	students << student
   	student.subject_id = id
+  	student.save
   end
 end
