@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :professors
   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get 'students/:id/enroll', to: 'students#enroll'
-  post 'subjects/:id/add_student', to: 'subjects#add_student'
+  get 'students/:id/enroll', to: 'students#enroll', as: "enroll"
+  post 'subjects/:id/add_student', to: 'subjects#add_student', as: "add_student"
 end
